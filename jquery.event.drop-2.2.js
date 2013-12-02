@@ -88,7 +88,8 @@ drop = $.event.special.drop = {
 		// store the drop data on the element
 		$.data( this, drop.datakey, data );
 		// store the drop target in internal cache
-		drop.targets.push( this );
+		// MD - unshift is used instead of push to be able to add new drop targets with higher priority
+		drop.targets.unshift( this );
 	},
 	
 	// destroy the configure interaction	
